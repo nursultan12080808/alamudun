@@ -4,9 +4,8 @@ import AssideRight from "../components/AssideRight";
 import LinksNo from "../components/LinksNo";
 import API, { AUTHAPI } from "../axios";
 
-
 export default function Administration() {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState<any>(null);
 
     useEffect(() => {
         API.get("administartions/")
@@ -20,16 +19,15 @@ export default function Administration() {
     return (
         <main className="bg-milk_gray 1024px:flex-col py-[20px] flex justify-center gap-[20px] relative">
             <LinksNo title="Администрация" pathTitle="Администрация" newsId={1} likes={0}>
-                <div>
-                    {
-                        user
-                        &&
-                        <div className="mb-[40px]">
-                            <div className="text-[18px] font-[500] mb-[10px]">Ф.И.О: {user[0].name}</div>
-                            <div className="text-[18px] font-[500]">Должность: {user[0].job.name}</div>
+                    { !!user 
+                        && 
+                        user.map((item:any, index: number) => (
+                            <div className="mb-[40px]">
+                            <div className="text-[18px] font-[500] mb-[10px]">Ф.И.О: {item?.name}</div>
+                            <div className="text-[18px] font-[500]">Должность: {item?.job?.name}</div>    
                         </div>
+                        ))
                     }
-                </div>
             </LinksNo>
             <AssideRight />
         </main>
