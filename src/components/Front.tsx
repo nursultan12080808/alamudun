@@ -25,7 +25,7 @@ export default function Front() {
     const news = useSelector((state: any) => state.news.news)
 
     useEffect(() => {
-        axios.get(`https://aodatka.pythonanywhere.com/api/v1/tags/`)
+        axios.get(`http://localhost:8000/api/v1/tags/`)
             .then(res => {
                 setTags(res)
             })

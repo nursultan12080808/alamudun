@@ -18,7 +18,7 @@ export default function NewsBlock() {
         API.get(`news/${params.id}/`)
             .then((res: any) => {
                 setState(res.data)
-                fetch(`https://aodatka.pythonanywhere.com/api/v1/news/${res.data.id}/`, {
+                fetch(`http://localhost:8000/api/v1/news/${res.data.id}/`, {
                     method: 'PATCH',
                     headers: {
                         'Authorization': `Token ${token}`,
@@ -45,7 +45,7 @@ export default function NewsBlock() {
 
         let token = localStorage.getItem('token')
 
-        fetch("https://aodatka.pythonanywhere.com/api/v1/comments/", {
+        fetch("http://localhost:8000/api/v1/comments/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -11,7 +11,7 @@ export default function Online() {
     useEffect(() => {
         const fetchPostanovlenia = async () => {
             try {
-                const response = await fetch('https://aodatka.pythonanywhere.com/api/v1/postanovlenies/');
+                const response = await fetch('http://localhost:8000/api/v1/postanovlenies/');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
