@@ -45,7 +45,7 @@ export default function NewsBlock() {
 
         let token = localStorage.getItem('token')
 
-        fetch("http://194.87.118.22/api/v1/comments/", {
+        fetch("https://aodatka.pythonanywhere.com/api/v1/comments/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
