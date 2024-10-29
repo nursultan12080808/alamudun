@@ -1,4 +1,6 @@
-[[redirects]]
-  [build]
+[build]
   publish = "dist"
   command = "npm run build"
+
+[[redirects]]
+  /*  /index.html  200
